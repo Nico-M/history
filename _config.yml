@@ -10,14 +10,14 @@ links:
   - name:         About
     url:          /about
   - name:         Blog
-    url:          http://muan.co
+    url:          http://www.jianshu.com/users/d79514dbf379/latest_articles
     external:     true
   - name:         GitHub
-    url:          http://github.com/muan
+    url:          http://github.com/Nico-M
     external:     true
 highlighter:      pygments
 permalink:        pretty
-markdown:         kramdom
+markdown:         redcarpet
 redcarpet:
   extensions:
     - smart
