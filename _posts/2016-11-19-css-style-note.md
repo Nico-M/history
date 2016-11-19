@@ -1,10 +1,8 @@
 ---
-layout:post
-title:Css StyleSheet
-date:2016-11-19
+layout: post
+title: Css StyleSheet
+date: 2016-11-19
 ---
-
-
 
 1. css新建格式
 
