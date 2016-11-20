@@ -21,7 +21,7 @@ $('input:submit').on('click', function () {
             //console.log(data);
             //注意要先设置,叠加
             var str = '';
-            var imgUrl = 'http://img.xiami.net/'
+            var imgUrl = 'https://img.xiami.net/'
             $.each(data, function (index, value) {
                 str += '<li>\
                 <dl class="clearfix">\
