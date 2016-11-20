@@ -4,7 +4,7 @@ $('input:submit').on('click', function () {
     //请求豆瓣数据
     $.ajax({
         type: 'get',
-        url: 'https://www.xiami.com/search/json',
+        url: 'www.xiami.com/search/json',
         data: {
             k: keyword,
             t: 1
