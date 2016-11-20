@@ -20,6 +20,7 @@ html{
     font-size:100px;
 }
 body{
+    font-family: "Consolas,'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace";
     font-size: 0.12px;
     /*overflow: hidden;*/
     background:linear-gradient(#935093,#D56C4D);
@@ -94,7 +95,7 @@ body{
 .main{
     /*height:4.3rem;*/
     margin-top:2%;
-    border:1px solid red;
+/*    border:1px solid red;*/
 }
 .main .control{
     width:40%;
@@ -110,10 +111,13 @@ body{
     width:98%;
     /*margin:0 auto;*/
     padding-top:2%;
+    max-height:2.4rem;
+    overflow:hidden;
 }
 /*歌曲封面*/
 .cover img{
     width:100%;
+    height:100%;
 }
 .control .info{
     margin-top:.08rem;
@@ -150,7 +154,7 @@ body{
     position: relative;
 }
 .process .live-process{
-    width:30%;
+/*    width:30%;*/
     height:.02rem;
     position: absolute;
     left:0;
@@ -177,12 +181,14 @@ body{
     height:0.13rem;
    background: url(../images/xhqs9X01.png) -696px 0px;
 }
-.time-left .download{
+.time-left .download a{
+    display: block;
     width:0.16rem;
     height:0.16rem;
     margin-left:1rem;
     background: url(../images/xhqs9X01.png) -204px 0px
 }
+
 /*播放器按钮*/
 .icon li ul{
 
@@ -198,7 +204,8 @@ li {
     background-image:url(../images/xhqs9X01.png);
 }
 .icon li:nth-child(1){
-    background-position:-492px 0px; 
+    background-position:-324px 0px;
+/*    background-position:-492px 0px; */
 }
 .icon li:nth-child(2){
     background-position:-276px 0px;
