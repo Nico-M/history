@@ -1,0 +1,17 @@
+<article class="weui-article">
+    <h1>{{detaileNews.channelName}}</h1>
+    <section>
+        <h2 class="title">{{detaileNews.title}}</h2>
+        <section>
+            <p ng-show='detaileNews.havePic'>
+                <img ng-src={{img.url}} alt="" ng-repeat='img in detaileNews.imageurls'>
+                
+            </p>
+            <p >
+               {{detaileNews.content}}
+            </p>
+            
+        </section>
+        
+    </section>
+</article>

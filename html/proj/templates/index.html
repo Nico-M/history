@@ -1,0 +1,25 @@
+<div class="weui-tab" ng-controller="indexCtrl">
+    <div class="weui-navbar fixBar">
+        <div class="weui-navbar__item {{id==0?'weui-bar__item_on':''}}">
+            <a href="#/index/news/0">国内最新</a>
+        </div>
+        <div class="weui-navbar__item {{id==1?'weui-bar__item_on':''}}">
+            <a href="#/index/news/1">国际最新</a>
+        </div>
+        <div class="weui-navbar__item {{id==2?'weui-bar__item_on':''}}">
+            <a href="#/index/news/2">社会焦点</a>
+        </div>
+        <div class="weui-navbar__item {{id==3?'weui-bar__item_on':''}}">
+           <a href="#/index/news/3">游戏焦点</a>
+        </div>
+        <div class="weui-navbar__item {{id==4?'weui-bar__item_on':''}}">
+            <a href="#/index/news/4">科技焦点</a>
+        </div>
+        
+    </div>
+    <div class="weui-tab__panel">
+
+    </div>
+</div>
+
+<ui-view></ui-view>
