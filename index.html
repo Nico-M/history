@@ -68,6 +68,7 @@
         img{
             border-radius: 8px;
             box-shadow: 0 0 4px #000;
+            width:100%;
         }
         .pace .box{
             width:133px;
@@ -114,16 +115,7 @@
             0%{
                 transform:translateY(0px) rotateY(0) ;
             }
-/*
-            25%{
-                transform:translateY(100px);
-    
-            }
-            
-            75%{
-                transform:translateY(0px);
-            }
-*/
+
             50%{
                 transform:translateY(150px) rotateY(180deg) 
             }
@@ -177,22 +169,40 @@
             // });
         });
         //添加监听事件,当整个排列完成后
-        oBox.last().on('transitionend',function(event) {
-            event.preventDefault();
-            console.log(666);
-            $('.pace').addClass('zhuandong');
-        });
-        $('.pace').hover(function(){
-            $('.pace').css('animation-play-state','paused')
-        },function(){
-            $('.pace').css('animation-play-state','running')
-        })
+        // oBox.last().on('transitionend',function(event) {
+        //     event.preventDefault();
+        //     console.log(666);
+        //     $('.pace').addClass('zhuandong');
+        // });
+        // $('.pace').hover(function(){
+        //     $('.pace').css('animation-play-state','paused')
+        // },function(){
+        //     $('.pace').css('animation-play-state','running')
+        // })
         
-        //画布设置,获取canvas对象
-        //var cvs = document.getElementById('canvas');
-        //var ctx = cvs.getContext('2d');
-        //var h = cvs.height = document.documentElement.clientHeight;
-        //var w = cvs.width = document.documentElement.clientwidth;
+        var xTo = 0,yTo=0;
+        $(document).mousedown(function(e){
+                var oX = e.clientX;
+                var oY = e.clientY;
+                $(document).mousemove(function(e){
+                    var x =e.clientX-oX;
+                    var y =e.clientY-oY;
+                    //注意方向
+                    xTo += x*0.2;
+                    yTo -=y*0.1;
+                    $('.pace').css({
+                        //z注意:以X轴旋转是上下移动,所以用y坐标的差值;同理y轴
+                        transform:' rotateX('+yTo+'deg) rotateY('+xTo+'deg)'
+                    });
+                    // 更新初始值,每次移动后初始点都做了改变
+                    oX=e.clientX;
+                    oY=e.clientY;
+                }).mouseup(function(){
+                    $(this).off('mousemove');
+                });
+                return false;
+        });
+        
     </script>
 </body>
 </html>
