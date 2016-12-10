@@ -1,14 +1,11 @@
- <!-- 这里如果使用ion-header-bar无法实现居中效果 -->
-<div class="bar bar-header bar-balanced">
-    <h1 class="title logo">
-       
-    </h1>
-    <a class="button button-icon icon ion-navicon" menu-toggle="right"></a>  
-</div>
-<!-- <div class="bar bar-header bar-positive">
-        <h1 class="title logo">腾讯新闻</h1>
-        <a class="button button-clear icon ion-ios-gear"></a>
-    </div> -->
+ 
+ <ion-view view-title="TAB" hide-back-button="true">
+
+
+    <!-- 导航 -->
+    <ion-nav-bar class="bar-balanced" align-title="center">
+        
+    </ion-nav-bar>
 <ion-tabs class="tabs-top tabs-striped">
     <ion-tab title="动图党" href="#/tab/index">
         <ion-nav-view name="tab-index"></ion-nav-view>
@@ -23,3 +20,5 @@
         <ion-nav-view name="tab-sister"></ion-nav-view>
     </ion-tab>
 </ion-tabs>
+
+</ion-view>

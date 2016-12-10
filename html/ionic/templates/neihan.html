@@ -1,4 +1,14 @@
 <ion-view>
+<!-- 导航标题 -->
+<ion-nav-title>
+    
+   <h1 class="title logo">
+       
+    </h1>
+      
+
+ </ion-nav-title>
+ <!-- 内容区 -->
 <ion-content class="content has-tabs-top">
 <div class="list ">
     <a class="item item-icon-right" ng-repeat="data in datas| pageStartFrom:curPage*pageSize |limitTo:pageSize" ui-sref='detail({id:{{data.id|getNumber}}})'>
@@ -9,6 +19,7 @@
 </div>
 
 </ion-content>
+<!-- 翻页 -->
 <div class="bar bar-footer ">
 <div class="button-bar">
     <a class="button  button-clear button-balanced icon ion-arrow-left-b" ng-click="prePage()"></a>

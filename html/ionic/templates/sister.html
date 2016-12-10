@@ -1,4 +1,15 @@
-<ion-view>
+<ion-view >
+<ion-nav-title>
+    
+   <h1 class="title logo">
+       
+    </h1>
+      
+
+ </ion-nav-title>
+<ion-header-bar class="bar-balanced">
+    
+</ion-header-bar>
 <ion-content class="content has-header has-tabs-top">
 <div class="list card" ng-repeat="data in dataArr">
     <div class="item item-avatar-left"> <img ng-show='data.name?true:false' ng-src='{{data.profile_image}}'>
@@ -7,7 +18,7 @@
         <p> {{data.text}} </p>
         <!--        <img src="" alt="">--></div>
     <div class="item" ng-show='data.video_uri?true:false'>
-        <video controls>
+        <video controls width="100%">
             <source ng-src="{{data.video_uri|trustAsResourceUrl}}" type="video/mp4" /> </video>
     </div>
    
