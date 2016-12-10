@@ -1,0 +1,19 @@
+<ion-view>
+<ion-content class="content has-tabs-top">
+<div class="list ">
+    <a class="item item-icon-right" ng-repeat="data in datas| pageStartFrom:curPage*pageSize |limitTo:pageSize" ui-sref='detail({id:{{data.id|getNumber}}})'>
+    <i class="icon ion-arrow-graph-up-right balanced"></i>
+      {{ data.title|formate}}
+    </a>
+    
+</div>
+
+</ion-content>
+<div class="bar bar-footer ">
+<div class="button-bar">
+    <a class="button  button-clear button-balanced icon ion-arrow-left-b" ng-click="prePage()"></a>
+    <a class=" button  button-clear button-balanced icon ion-arrow-right-b" ng-click="nextPage()"></a>
+</div>
+    
+</div>
+</ion-view>

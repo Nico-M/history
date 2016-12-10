@@ -1,0 +1,25 @@
+ <!-- 这里如果使用ion-header-bar无法实现居中效果 -->
+<div class="bar bar-header bar-balanced">
+    <h1 class="title logo">
+       
+    </h1>
+    <a class="button button-icon icon ion-navicon" menu-toggle="right"></a>  
+</div>
+<!-- <div class="bar bar-header bar-positive">
+        <h1 class="title logo">腾讯新闻</h1>
+        <a class="button button-clear icon ion-ios-gear"></a>
+    </div> -->
+<ion-tabs class="tabs-top tabs-striped">
+    <ion-tab title="动图党" href="#/tab/index">
+        <ion-nav-view name="tab-index"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="内涵帝" href="#/tab/neihan">
+        <ion-nav-view name="tab-neihan"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="蛇精病" href="#/tab/crazy">
+        <ion-nav-view name="tab-crazy"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="不得姐" href="#/tab/sister">
+        <ion-nav-view name="tab-sister"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

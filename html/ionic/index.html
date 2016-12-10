@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="nico">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="css/ionic.css">
+    <script src="js/ionic.bundle.js"></script>
+    <script src="base.js"></script>
+    <style>
+    .logo {
+        background: url(images/qunimei_logo.png) no-repeat center;
+        background-size: contain;
+    }
+    
+    .justify {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bottom {
+        display: flex;
+        align-items: center;
+    }
+    </style>
+</head>
+
+<body>
+    <ion-side-menus>
+        <ion-side-menu-content>
+            <ion-nav-view></ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="right" width="250" class="light-bg">
+            <ion-content class="padding">
+                <div class="list list-inset">
+                    <div class="item item-input">
+                        <label class="input-label">姓名:</label>
+                        <input type="text" name="" value="" placeholder="姓名">
+                    </div>
+                    <div class="item item-input ">
+                        <label class="input-label">密码:</label>
+                        <input type="text" name="" value="" placeholder="密码">
+                    </div>
+                </div>
+                <div class=" justify ">
+                    <a class="button  button-balanced button-clear button-small">登录</a>
+                    <a class="button  button-balanced button-small button-clear">注册</a>
+                </div>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+
+</html>
