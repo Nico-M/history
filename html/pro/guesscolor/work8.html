@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: pink;
+    }
+    
+    div {
+        width: 200px;
+        height: 100px;
+        border-radius: 5px;
+        background: red;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -50px;
+        z-index: 2;
+        display: none;
+    }
+    
+    h5 {
+        color: white;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+    }
+    
+    div a {
+        display: block;
+        text-decoration: none;
+        color: yellow;
+        width: 150px;
+        height: 20px;
+        background: purple;
+        border-radius: 8px;
+        text-align: center;
+        margin: 20px auto;
+    }
+    
+    table {
+        width: 600px;
+        height: 600px;
+        table-layout: auto;
+        border-spacing: 8px;
+        margin: 40px auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -300px;
+        margin-top: -300px;
+    }
+    
+    td {
+        border-radius: 5px;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var count = 0;
+        var muti = 2;
+
+        function createTable() {
+            function rdmColor() {
+
+                var R1 = Math.floor(Math.random() * 256);
+                var G1 = Math.floor(Math.random() * 256);
+                var B1 = Math.floor(Math.random() * 256);
+                return 'rgb(' + R1 + ', ' + G1 + ', ' + B1 + ')';
+            }
+
+
+
+
+
+            var oTab = document.getElementsByTagName('table')[0];
+            var oDiv = document.getElementsByTagName('div')[0];
+            var color1 = rdmColor();
+
+            for (var i = 0; i < muti; i++) {
+
+                var oTr = document.createElement('tr');
+
+                for (var j = 0; j < muti; j++) {
+
+                    var oTd = document.createElement('td');
+                    oTd.className = 'td';
+
+                    oTd.style.background = color1;
+                    oTr.appendChild(oTd);
+
+
+                }
+                oTab.appendChild(oTr);
+            }
+            var iTd = document.getElementsByTagName('td');
+            var index = Math.floor(Math.random() * (iTd.length));
+            var color2 = rdmColor();
+            if (color2 == color1) {
+                color2 = rdmColor();
+            }
+            iTd[index].style.background = color2;
+            for (n = 0; n < iTd.length; n++) {
+                iTd[n].onclick = function() {
+                    count++;
+                    if (count % 4 == 0) {
+                        muti += 1;
+                    }
+
+                    if (this.style.background == color1) {
+                        oDiv.style.display = 'block';
+
+                    } else {
+
+                        oTab.innerHTML = '';
+                        createTable();
+                        // console.log(color1);
+                        // console.log(this.style.background);
+
+                    }
+                }
+            }
+        }
+
+        createTable();
+
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h5>色狼</h5>
+        <a href=''>再玩一次</a>
+    </div>
+    <table>
+        <!-- <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr> -->
+    </table>
+</body>
+
+</html>

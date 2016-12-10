@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(images/bg.jpg);
+            overflow: hidden;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            display: block;
+            border: 0;
+        }
+        .clearfix {
+            zoom: 0;
+        }
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0;
+        }
+        .box {
+            width: 900px;
+            height: 330px;
+            margin: 200px auto;
+            position: relative;
+        }
+        .list li {
+            width: 900px;
+            height: 330px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: scale(0);
+
+        }
+        .list li.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .list li img {
+            width: 100%;
+        }
+        .count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+        .count li {
+            display: inline-block;
+            font-size: 40px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            padding: 10px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .count li.curr {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="list" id="list">
+            <li class="active"><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+            <li><img src="images/5.jpg"></li>
+        </ul>
+        <ul class="count" id="count">
+            <li class="curr">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+    <script>
+        // 1. 获取相应的下标
+        // 2. 定义一个淡入淡出的方法 通过下标修改相应的图片
+        var list = document.getElementById('list');
+        var count = document.getElementById('count');
+        var imgs = list.getElementsByTagName('li');
+        var btns = count.getElementsByTagName('li');
+        // var i = 0 ,ls=imgs.length;
+        //  遍历获取下表
+        for( var i = 0; i < btns.length; i++){
+            btns[i].index = i;
+            btns[i].onmousedown = function(){
+                show(this.index);
+            };
+        };
+
+        //  定义一个淡入淡出函数
+        function show(a){
+            for( var i = 0; i < btns.length; i++){
+                //  所有的都去掉 curr 样式
+                btns[i].className = "";
+                //  给选中的添加 curr 样式
+                btns[a].className = "curr";
+
+                // 图片切换
+                imgs[i].style.opacity = 0;
+                imgs[a].style.opacity = 1;
+                //  放大效果
+                imgs[i].style.transform = "scale(0)";
+                imgs[a].style.transform = "scale(1)";
+                imgs[a].style.transition = "all 3s ease";
+            };
+        };
+    </script>
+</body>
+</html>

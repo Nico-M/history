@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Baidu</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        height: 794px;
+        font-size: 12px;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    input {
+        border: none;
+    }
+    
+    .clearfix:before,
+    .clearfix:after {
+        content: '';
+        display: table;
+    }
+    
+    .clearfix:after {
+        clear: both;
+        overflow: hidden;
+    }
+    
+    #header {
+        width: 100%;
+        border-bottom: 1px solid #EBEBEB;
+    }
+    
+    .header-l {
+        float: left;
+    }
+    
+    .header-l .weather {
+        float: left;
+        height: 32px;
+        line-height: 32px;
+    }
+    
+    .place {
+        padding-left: 8px;
+    }
+    
+    .weather img {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    
+    .level {
+        color: #3396ff;
+        font-weight: bold;
+        padding: 0;
+    }
+    
+    .weather span {
+        margin-right: 10px;
+    }
+    
+    .weather span:last-child {
+        margin-right: 0;
+        padding-right: 8px;
+        border-right: 1px solid #000;
+    }
+    
+    .info {
+        float: left;
+    }
+    
+    .info li,
+    .header-r .link li {
+        float: left;
+    }
+    
+    .info li a,
+    .link li a {
+        display: block;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 11px;
+        color: #555;
+    }
+    
+    .header-r {
+        float: right;
+    }
+    
+    .header-r .link {
+        float: left;
+    }
+    
+    .header-r .link li a {
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    .header-r .more {
+        float: left;
+        width: 86px;
+        height: 32px;
+        background: #398bfb;
+        color: #fff;
+        line-height: 32px;
+        text-align: center;
+    }
+    
+    .content {
+        width: 644px;
+        margin: 0 auto;
+        padding-top: 126px;
+    }
+    
+    .logo {
+        width: 270px;
+        height: 129px;
+        background: url(images/bd_logo.png) no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+    }
+    
+    .search {
+        font-size: 0;
+        margin-top: 40px;
+        position: relative;
+    }
+    
+    .txt {
+        width: 538px;
+        height: 36px;
+        border: 1px solid #B8B8B8;
+        border-right: none;
+        vertical-align: top;
+        text-indent: 4px;
+    }
+    
+    .btn {
+        width: 104px;
+        height: 38px;
+        background: #3388FF;
+        color: white;
+        font-size: 18px;
+        vertical-align: top;
+    }
+    
+    .camera {
+        width: 18px;
+        height: 16px;
+        position: absolute;
+        background: url(images/camera.png) 0 0 no-repeat;
+        right: 114px;
+        top: 10px;
+    }
+    
+    .camera:hover {
+        background-position: 0 -20px
+    }
+    
+    .more-list {
+        width: 86px;
+        height: 794px;
+        background: #F9F9F9;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        overflow: hidden;
+    }
+    
+    
+    .more-list a {
+        text-decoration: none;
+    }
+    
+    
+    
+    .more-list li a {
+        display: block;
+        text-align: center;
+        width: 66px;
+        height: 76px;
+        margin: 0 auto;
+        font-size: 12px;
+        border-bottom: #f0f0f0 1px solid;
+        color: #666;
+        text-decoration: none;
+        overflow: hidden;
+        text-shadow: none;
+        line-height: 14px;
+    }
+    .more-list li a:hover{
+        text-decoration: underline;
+    }
+    .more-list ul li:first-child a {
+        display: block;
+        text-align: center;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 11px;
+    }
+
+    .more-list li a img {
+        display: block;
+        height: 36px;
+        width: auto;
+        margin: 10px auto 5px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <header id="header" class=" clearfix">
+        <section class="header-l">
+            <div class="weather">
+                <span class="place">广州:</span><img src="images/a2.png" alt=""><span>16℃</span><span class="level">优</span><span class="grade">47</span>
+            </div>
+            <ul class="info hlink">
+                <li><a href="">宝箱</a></li>
+                <li><a href="">换肤</a></li>
+                <li><a href="">消息</a></li>
+                <li><a href="">显示频道</a></li>
+            </ul>
+        </section>
+        <section class="header-r">
+            <ul class="link">
+                <li><a href="">糯米</a></li>
+                <li><a href="">新闻</a></li>
+                <li><a href="">hao123</a></li>
+                <li><a href="">地图</a></li>
+                <li><a href="">视频</a></li>
+                <li><a href="">贴吧</a></li>
+                <li><a href="">登录</a></li>
+                <li><a href="">注册</a></li>
+            </ul>
+            <div class="more">
+                更多产品
+            </div>
+            <div class="more-list">
+                <ul>
+                    <li><a href="">更多产品</a></li>
+                    <li>
+                        <a href="">
+                        <img src="images/music.png" alt=""> 音乐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/bang.png" alt=""> 音乐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/image.png" alt=""> 音乐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/tuiguang.png" alt=""> 音乐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/wenku.png" alt=""> 音乐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/zhidao.png" alt=""> 音乐
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/music.png" alt=""> 音乐
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
+    <!-- /header -->
+    <section>
+        <div class="content">
+            <div class="logo"></div>
+            <div class="search">
+                <input type="text" class="txt">
+                <input type="submit" class="btn" value="百度一下">
+                <span class="camera"></span>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var oMore=document.querySelector('.more');
+        var oList = document.querySelector('.more-list')
+        oMore.onmouseover=function(){
+            console.log(666);
+            oList.style.display="block";
+        }
+        oList.onmouseover=function(){
+            oList.style.display="block";
+        }
+        oList.onmouseout=function(){
+            oList.style.display="none";
+        }
+    </script>
+</body>
+
+</html>

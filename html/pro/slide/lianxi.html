@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        li{
+            list-style:none;
+        }
+        img{
+            display: block;
+            border:none;
+        }
+        body{
+            background:url(images/bg.jpg);
+        }
+        /*.boxall{
+            width:100%;
+            height:800px;
+            background:url(images/bg.jpg) ;
+           
+        }*/
+        .box{
+            width:900px;
+            height:330px;
+            margin:80px auto;
+            overflow: hidden;
+            position: relative;
+
+        }
+        .imgs{
+           
+        }
+        .item{
+            position: absolute;
+            left:0;
+            top:0;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 2s ease;
+        }
+        .item img{
+            width:900px;
+            height:330px;
+        }
+        .point{
+            position: absolute;
+            bottom:20px;
+            left:50%;
+            margin-left:-95px;
+
+        }
+        .point li{
+            width:30px;
+            height:30px;
+            margin-right:10px;
+            float:left;
+            background: rgba(72,65,189,.7);
+            border-radius:50%;
+            text-align: center;
+            line-height: 30px;
+            color:white;
+        }
+        li.sel{
+            background:rgba(190,64,172,1.0);
+        }
+        .point li:last-child{
+            margin-right:0;
+        }
+        .active{
+            opacity: 1;
+            animation:move 1s ease forwards;
+        }
+        @-webkit-keyframes move{
+            0%{
+                transform:scale(0) rotateX(0);
+            }
+            100%{
+                transform:scale(1) rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="boxall">
+    <div class="box">
+        <ul class="imgs">
+            <li class="item active"><img src="images/1.jpg" alt=""></li>
+            <li class="item"><img src="images/2.jpg" alt=""></li>
+            <li class="item"><img src="images/3.jpg" alt=""></li>
+            <li class="item"><img src="images/4.jpg" alt=""></li>
+            <li class="item"><img src="images/5.jpg" alt=""></li>
+            
+        </ul>
+        <ul class="point">
+            <li class="sel">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            
+        </ul>
+    </div>
+    </div>
+    <script>
+        var oUl=document.getElementsByTagName('ul');
+        var oImg = oUl[0].getElementsByTagName('li');
+        var oBtn = oUl[1].getElementsByTagName('li')
+        for(var i=0;i<oBtn.length;i++){
+            oBtn[i].index = i;
+            oBtn[i].onclick=function(){
+                show(this.index)
+            }
+        }
+        function show(id){
+            for(var i=0;i<oImg.length;i++){
+                // console.log(oImg[i].classList.length)
+               oImg[i].classList.remove('active');
+                oBtn[i].className=""
+
+            }
+            // oImg[id].className='active';
+                oBtn[id].className="sel";
+               oImg[id].classList.add('active');
+
+            // 
+        }
+    </script>
+</body>
+</html>

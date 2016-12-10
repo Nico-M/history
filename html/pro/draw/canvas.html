@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid red;
+        }
+        /*input{
+            display: block;
+        }*/
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div>
+    <input type="button" value="素描" id="sumiao">
+    <input type="button" value="橡皮擦" id="clear">
+        
+    </div>
+    <div>
+        <select name="" id="select">
+            <option value="" >red</option>
+            <option value="" >green</option>
+            <option value="">yellow</option>
+            <option value="">blue</option>
+        </select>
+    </div>
+    <script>
+        var cvs = document.getElementById('canvas');
+        var sel = document.getElementById('select');
+        
+        var clear = document.getElementById('clear');
+     var sumiao = document.getElementById('sumiao');
+        var flag=true;
+        var color = 'red';
+        sumiao.onclick=function(){
+            var index = sel.selectedIndex;
+             color = sel.options[index].text;
+             console.log(color);
+             flag = true;
+        }
+        clear.onclick=function(){
+            flag = false;
+        }
+
+
+
+
+        // var option = sel.getElementsByTagName('option');
+        
+        console.log(color)
+        
+        // for(var i = 0;i<option.length;i++){
+        //     console.log(option[i].checked);
+        // }
+        var ctx = cvs.getContext('2d');
+        var flag = true;
+        cvs.onmousedown=function(e){
+            ctx.beginPath();
+            var x0 = e.offsetX;
+            var y0 = e.offsetY;
+
+            ctx.moveTo(x0,y0);
+
+            cvs.onmousemove=function(e){
+                var x1 = e.offsetX;
+                var y1 = e.offsetY;
+                if(flag){
+                    ctx.lineTo(x1,y1);
+                    ctx.lineWidth='4';
+                ctx.strokeStyle=color;
+                ctx.stroke();
+            }else{
+                ctx.clearRect(x1,y1,20,20);
+            }
+                
+                
+            }
+            onmouseup=function(){
+                cvs.onmousemove=null;
+                onmouseup=null;
+                ctx.closePath();
+            }
+        }
+    </script>
+</body>
+</html>
