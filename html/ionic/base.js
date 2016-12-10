@@ -50,10 +50,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
     $urlRouterProvider.otherwise("/tab/sister");
 });
-app.controller('indexCtrl', ['$scope', '$http', function($scope, $http,$ionicLoading) {
+app.controller('indexCtrl', ['$scope', '$http','$ionicLoading', function($scope, $http,$ionicLoading){
         $ionicLoading.show({
         template: '客官,我来啦',
-    })
+    });
         var page = 0;
        
         var url = 'info.php';
