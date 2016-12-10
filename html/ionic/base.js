@@ -51,34 +51,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/tab/index");
 });
 app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
-
+        $ionicLoading.show({
+        template: '客官,我来啦',
+    })
         var page = 0;
-        // var count = 10;
-        // function listResultProcess(data){
-        //   return data
-        // }
+       
         var url = 'info.php';
         $scope.details = [];
         $scope.loadMore = function() {
             page++;
-            // $http({
-            //     method: 'GET'
-            //     , url: url, //这里callback有点问题
-            //     params: {
-            //         page: page
-            //     }
-            // }).success(function (data) {
-            //     console.log('加载数据')
-            //     $scope.details = $scope.details.concat(data.showapi_res_body.contentlist);
-            //     console.log(data);
-            //     //发送事件
-            //     $scope.$broadcast('scroll.infiniteScrollComplete');
-            // }).error(function (state) {
-            //     console.log('获取失败')
-            // });
-            // $scope.loadMore();
+            
             url = 'https://route.showapi.com/341-3?showapi_appid=28369&showapi_sign=27d6d8354bda4e648ffe14a93551b851&page=' + page;
             $http.get(url).success(function(data) {
+                $ionicLoading.hide();
                 $scope.details = $scope.details.concat(data.showapi_res_body.contentlist);
                 console.log(data);
                 //发送事件
@@ -96,7 +81,7 @@ app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
     //内涵控制器
 app.controller('neihanCtrl', function($scope, $http, $ionicLoading) {
     $ionicLoading.show({
-        template: '客观,稍等',
+        template: '客官,别急嘛',
     });
     var page = 0;
     //加载页面
@@ -177,7 +162,7 @@ app.controller('crazyCtrl', function($scope, $http) {
 
 app.controller('sisterCtrl', function($scope, $http, $ionicLoading) {
     $ionicLoading.show({
-        template: '客观,稍等',
+        template: '客官,别急嘛',
     })
     var url = 'https://route.showapi.com/255-1?showapi_appid=28369&showapi_sign=27d6d8354bda4e648ffe14a93551b851&type=&title=&page=&';
     $http.get(url).success(function(data) {

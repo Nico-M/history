@@ -1,42 +1,31 @@
 <ion-view view-title="index">
- <ion-nav-title>
-    
-   <h1 class="title logo">
+    <ion-nav-title>
+        <h1 class="title logo">
        
     </h1>
-      
-
- </ion-nav-title>
- <ion-nav-buttons side="right">
-     <a class="button button-icon icon ion-navicon" menu-toggle="right"></a>
- </ion-nav-buttons>
-
-
-<ion-content class="content has-tabs-top">
-<div class="list card inset" ng-repeat="detail in details">
-
-
-  <div class="item item-body">
-    <img class="full-image" ng-src="{{detail.img}}">
-    <p>
-      {{detail.title}}
-    </p>
-    <!-- <ion-list>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon icon ion-navicon" menu-toggle="right"></a>
+    </ion-nav-buttons>
+    <ion-content class="content has-tabs-top">
+        <div class="list card inset" ng-repeat="detail in details">
+            <div class="item item-body">
+                <img class="full-image" ng-src="{{detail.img}}">
+                <p>
+                    {{detail.title}}
+                </p>
+                <!-- <ion-list>
       <ion-item class="assertive"><i class="icon button-icon  ion-ios-heart-outline"></i></ion-item>
       <ion-item class="positive"><i class="icon button-icon ion-ios-chatboxes-outline"></i></ion-item>
     </ion-list> -->
-    <div class="justify">
-      <a href="" class="button button-clear button-assertive icon ion-android-favorite icon-left">0</a>
-     <a href="" class="button button-clear button-positive icon-left icon button-icon ion-social-github" >100</a>
-    </div>
-  </div>
-  
-</div>
-<ion-infinite-scroll
-     on-infinite="loadMore()"
-
-    distance="1%" immediate-check="false">
-     <!-- 禁止第一次就触发事件 -->
-</ion-infinite-scroll>
-</ion-content>
+                <div class="justify">
+                    <a href="" class="button button-clear button-assertive icon ion-android-favorite icon-left">0</a>
+                    <a href="" class="button button-clear button-positive icon-left icon button-icon ion-social-github">100</a>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%" immediate-check="false">
+            <!-- 禁止第一次就触发事件 -->
+        </ion-infinite-scroll>
+    </ion-content>
 </ion-view>
