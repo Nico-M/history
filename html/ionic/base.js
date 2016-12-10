@@ -136,13 +136,16 @@ app.filter('pageStartFrom', [function() {
     }
 }]);
 //内涵详情页面
-app.controller('detailCtrl', function($scope, $state, $http) {
+app.controller('detailCtrl', function($scope, $state, $http,$ionicHistory) {
     var id = ($state.params.id);
     console.log(id)
     var url = 'https://route.showapi.com/978-1?showapi_appid=28369&showapi_sign=27d6d8354bda4e648ffe14a93551b851&id=/xe/' + id + '.shtml&';
     $http.get(url).success(function(data) {
         $scope.img = (data);
-    })
+    });
+    $scope.back=function(){
+        $ionicHistory.goBack();
+    }
 });
 //蛇精病控制器
 app.controller('crazyCtrl', function($scope, $http) {
@@ -185,8 +188,11 @@ app.controller('sisterCtrl', function($scope, $http, $ionicLoading) {
 })
 app.filter('formate', function() {
     return function(str) {
-        var newstr = (str.split('').slice(5).join(''))
+        if(str){
+             var newstr = (str.split('').slice(5).join(''))
         return newstr;
+        }
+       
     }
 });
 app.filter('getNumber', function() {

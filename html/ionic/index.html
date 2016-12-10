@@ -23,12 +23,25 @@
         display: flex;
         align-items: center;
     }
+    .fork {
+                position: fixed;
+                /*width:50%;*/
+                right: 0;
+                bottom: 0;
+                z-index: 100;
+               
+            }
     </style>
 </head>
 
 <body>
+
     <ion-side-menus>
+    <a class="fork" href="https://github.com/Nico-M/Nico-M.github.io" target="_blank">
+            <img src="images/github_ribbon.png" width="132" height="132" />
+        </a>
         <ion-side-menu-content>
+        
             <!-- 主内容区 -->
             <ion-nav-bar class="bar-balanced" align-title="center">
                 <ion-nav-back-button class="button-clear">

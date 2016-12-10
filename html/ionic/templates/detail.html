@@ -1,9 +1,11 @@
 <!-- ion-view 的title 属性值将显示在导航栏中 -->
 <ion-view view-title="index" hide-back-button="flase">
     <ion-nav-title>
-        {{img.showapi_res_body.title}}
+        {{img.showapi_res_body.title|formate}}
     </ion-nav-title>
-    
+    <ion-nav-buttons side="left">
+     <a class="button button-icon ion-ios-arrow-back" ng-click="back()"></a>
+ </ion-nav-buttons>
     <ion-content class="content padding center ">
         <!-- <h1 class="title" style="font-size:18px">{{img.showapi_res_body.title}}</h1> -->
         <img ng-src="{{img.showapi_res_body.img}}" alt="" ng-style="{width:'100%'}">
