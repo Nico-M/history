@@ -48,7 +48,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
             }
         })
-    $urlRouterProvider.otherwise("/tab/index");
+    $urlRouterProvider.otherwise("/tab/sister");
 });
 app.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
         $ionicLoading.show({
