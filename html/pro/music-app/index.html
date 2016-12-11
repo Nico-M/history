@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- <script src="cordova.js"></script> -->
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+      img.full{
+        display: block;
+        width:100%;
+      }
+    </style>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    
+     
+    <script src="js/directives.js"></script>
+     
+    <script src="js/services.js"></script>
+    
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs 
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
+
+  </head>
+  <body ng-app="nico" animation="slide-left-right-ios7">
+  <div>
+  <!-- 声明带侧边栏 -->
+  <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+
+
+  <!-- 主内容区 -->
+    <ion-side-menu-content>
+    <!-- 导航栏 -->
+      <ion-nav-bar class="bar-stable">
+      <!-- 退回按钮 -->
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <!-- 加载模板 -->
+      <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+
+
+
+     <!-- 侧边栏内容 -->
+    <ion-side-menu side="left" id="side-menu21">
+      <ion-header-bar class="bar-stable">
+        <div class="title">用户信息</div>
+      </ion-header-bar>
+      <!-- 侧栏具体内容 -->
+      <ion-content ng-controller="side-menu21Ctrl" padding="true" class="side-menu-left has-header ">
+        <form id="side-menu21-form5" class="list" data-componentid="form5">
+          <label class="item item-input" id="side-menu21-input2" data-componentid="input2">
+            <input type="text" placeholder="username">
+          </label>
+          <label class="item item-input" id="side-menu21-input3" data-componentid="input3">
+            <input type="password" placeholder="password">
+          </label>
+          <button id="side-menu21-button16" class="button button-positive  button-block" data-componentid="button16">LOG IN</button>
+        </form>
+        <ion-list id="side-menu21-list4" data-componentid="list4">
+          <ion-item class="item-icon-right" id="side-menu21-list-item15" data-componentid="list-item15">积分商城
+            <i class="icon ion-android-more-vertical"></i>
+          </ion-item>
+          <ion-item class="item-icon-right" id="side-menu21-list-item16" data-componentid="list-item16">主题换肤
+            <i class="icon ion-erlenmeyer-flask"></i>
+          </ion-item>
+          <ion-item class="item-icon-right" id="side-menu21-list-item17" data-componentid="list-item17">听歌识曲
+            <i class="icon ion-ios-musical-note"></i>
+            <ion-option-button class="button-positive"></ion-option-button>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-side-menu>
+  </ion-side-menus>
+</div>
+  </body>
+</html>
